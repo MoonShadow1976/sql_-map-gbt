@@ -1,0 +1,236 @@
+{
+    "geography_columns": {
+        "columns": [
+            [
+                "coord_dimension",
+                "integer",
+                "YES",
+                null
+            ],
+            [
+                "srid",
+                "integer",
+                "YES",
+                null
+            ],
+            [
+                "type",
+                "text",
+                "YES",
+                null
+            ],
+            [
+                "f_table_catalog",
+                "name",
+                "YES",
+                null
+            ],
+            [
+                "f_geography_column",
+                "name",
+                "YES",
+                null
+            ],
+            [
+                "f_table_schema",
+                "name",
+                "YES",
+                null
+            ],
+            [
+                "f_table_name",
+                "name",
+                "YES",
+                null
+            ]
+        ],
+        "indexes": [],
+        "constraints": []
+    },
+    "geometry_columns": {
+        "columns": [
+            [
+                "coord_dimension",
+                "integer",
+                "YES",
+                null
+            ],
+            [
+                "srid",
+                "integer",
+                "YES",
+                null
+            ],
+            [
+                "type",
+                "character varying",
+                "YES",
+                null
+            ],
+            [
+                "f_table_catalog",
+                "character varying",
+                "YES",
+                null
+            ],
+            [
+                "f_geometry_column",
+                "name",
+                "YES",
+                null
+            ],
+            [
+                "f_table_schema",
+                "name",
+                "YES",
+                null
+            ],
+            [
+                "f_table_name",
+                "name",
+                "YES",
+                null
+            ]
+        ],
+        "indexes": [],
+        "constraints": []
+    },
+    "spatial_ref_sys": {
+        "columns": [
+            [
+                "srid",
+                "integer",
+                "NO",
+                null
+            ],
+            [
+                "auth_srid",
+                "integer",
+                "YES",
+                null
+            ],
+            [
+                "auth_name",
+                "character varying",
+                "YES",
+                null
+            ],
+            [
+                "srtext",
+                "character varying",
+                "YES",
+                null
+            ],
+            [
+                "proj4text",
+                "character varying",
+                "YES",
+                null
+            ]
+        ],
+        "indexes": [
+            [
+                "spatial_ref_sys_pkey",
+                "CREATE UNIQUE INDEX spatial_ref_sys_pkey ON public.spatial_ref_sys USING btree (srid)"
+            ]
+        ],
+        "constraints": [
+            [
+                "spatial_ref_sys_srid_check",
+                "CHECK"
+            ],
+            [
+                "spatial_ref_sys_pkey",
+                "PRIMARY KEY"
+            ],
+            [
+                "2200_33364_1_not_null",
+                "CHECK"
+            ]
+        ]
+    },
+    "\u7701\u9762": {
+        "columns": [
+            [
+                "ogc_fid",
+                "integer",
+                "NO",
+                "nextval('\"\u7701\u9762_ogc_fid_seq\"'::regclass)"
+            ],
+            [
+                "wkb_geometry",
+                "USER-DEFINED",
+                "YES",
+                null
+            ],
+            [
+                "area",
+                "numeric",
+                "YES",
+                null
+            ],
+            [
+                "perimeter",
+                "numeric",
+                "YES",
+                null
+            ],
+            [
+                "bou2_4m_",
+                "numeric",
+                "YES",
+                null
+            ],
+            [
+                "bou2_4m_id",
+                "numeric",
+                "YES",
+                null
+            ],
+            [
+                "adcode93",
+                "numeric",
+                "YES",
+                null
+            ],
+            [
+                "adcode99",
+                "numeric",
+                "YES",
+                null
+            ],
+            [
+                "name",
+                "character varying",
+                "YES",
+                null
+            ],
+            [
+                "\u540d\u79f0",
+                "character varying",
+                "YES",
+                null
+            ]
+        ],
+        "indexes": [
+            [
+                "\u7701\u9762_pk",
+                "CREATE UNIQUE INDEX \"\u7701\u9762_pk\" ON public.\"\u7701\u9762\" USING btree (ogc_fid)"
+            ],
+            [
+                "\u7701\u9762_wkb_geometry_geom_idx",
+                "CREATE INDEX \"\u7701\u9762_wkb_geometry_geom_idx\" ON public.\"\u7701\u9762\" USING gist (wkb_geometry)"
+            ]
+        ],
+        "constraints": [
+            [
+                "\u7701\u9762_pk",
+                "PRIMARY KEY"
+            ],
+            [
+                "2200_34122_1_not_null",
+                "CHECK"
+            ]
+        ]
+    }
+}

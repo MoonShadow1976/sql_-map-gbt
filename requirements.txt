@@ -1,0 +1,6 @@
+ollama
+gradio
+psycopg2
+geopandas
+matplotlib
+pillow
